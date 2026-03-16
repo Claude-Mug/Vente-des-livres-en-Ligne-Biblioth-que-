@@ -1,0 +1,114 @@
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registerModalLabel">Créer un Compte</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="mb-3">
+                        <label for="registerFirstName" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="registerFirstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerLastName" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="registerLastName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="registerEmail" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="registerPassword" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="registerPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Sexe</label>
+                        <div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Homme" required>
+                                <label class="form-check-label" for="genderMale">Homme</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Femme" required>
+                                <label class="form-check-label" for="genderFemale">Femme</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Pays</label>
+                        <select class="form-select" id="country" required>
+                            <option value="">Sélectionnez un pays</option>
+                            <option value="France">Burundi</option>
+                            <option value="Belgique">R.D.Congo</option>
+                            <option value="Suisse">Rwanda</option>
+                            <option value="France">Uganda</option>
+                            <option value="Belgique">France</option>
+                            <option value="Suisse">Belgique</option>
+                            <option value="France">Kenya</option>
+                            <option value="Belgique">Unite State</option>
+                            <option value="Suisse">Cameroun</option>
+                            <option value="France">Canada</option>
+                            <option value="Belgique">Tanzanie</option>
+                            <option value="Suisse">Afrique du sud</option>
+                            <!-- Ajoutez d'autres pays selon vos besoins -->
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="city" class="form-label">Ville</label>
+                        <input type="text" class="form-control" id="city" required>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="newsletter">
+                        <label class="form-check-label" for="newsletter">
+                            Je m'abonne aux newsletters Bibliothèque thématiques
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="partnerOffers">
+                        <label class="form-check-label" for="partnerOffers">
+                            Je souhaite recevoir les offres des partenaires Bibliothèque
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Soumettre</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const query = document.getElementById('searchInput').value;
+        alert('Recherche pour : ' + query); 
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+
+        // Logique de connexion à ajouter ici
+        alert('Connexion pour : ' + firstName + ' ' + lastName + ' (' + email + ')');
+    });
+
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const registerFirstName = document.getElementById('registerFirstName').value;
+        const registerLastName = document.getElementById('registerLastName').value;
+        const registerEmail = document.getElementById('registerEmail').value;
+        const registerPassword = document.getElementById('registerPassword').value;
+        const country = document.getElementById('country').value;
+        const city = document.getElementById('city').value;
+        const newsletter = document.getElementById('newsletter').checked;
+        const partnerOffers = document.getElementById('partnerOffers').checked;
+
+        alert('Création de compte pour : ' + registerFirstName + ' ' + registerLastName + ' (' + registerEmail + ')');
+        // Logique de création de compte à ajouter ici
+    });
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

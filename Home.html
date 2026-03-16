@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <title>Site Web</title>
+    <style>
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border: 2px solid red; /* Bordure pour visualiser */
+        }
+        .fixed-sidebar {
+            position: fixed;
+            top: 70px; /* Ajustez selon la hauteur de l'en-tête */
+            bottom: 0;
+            width: 28%;
+            overflow-y: auto;
+            border: 2px solid green; /* Bordure pour visualiser */
+        }
+        .main-content {
+            margin-left: 28.33%;
+            padding-top: 60px; /* Ajustez selon la hauteur de l'en-tête */
+            border: 2px solid blue; /* Bordure pour visualiser */
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed-header bg-dark text-white p-1">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">Mon Site Web</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <button id="resetButton" class="btn btn-primary">Retour à l'accueil</button>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-3 bg-danger">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="loadHomeContent()">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="loadPage('about.html')">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="loadPage('student.html')">Étudiant</a>
+                    </li>
+                </ul>
+                <div class="container w-auto">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Rechercher" aria-label="Search">
+                        <button class="btn btn-outline-primary btn-sm" type="submit">
+                            <i class="fas fa-search"></i> Rechercher
+                        </button>
+                        <a href="se_connecter.html" class="btn btn-outline-primary btn-sm ms-2">
+                            <i class="fas fa-sign-in-alt"></i> Se connecter
+                        </a>
+                        <a href="mon_panier.html" class="btn btn-outline-primary btn-sm ms-2">
+                            <i class="fas fa-shopping-cart"></i> Mon panier
+                        </a>
+                        <a href="creer_compte.html" class="btn btn-outline-primary btn-sm ms-2">
+                            <i class="fas fa-user-plus"></i> Créer un compte
+                        </a>
+                    </form>
+                </div>
+                
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+            </div>
+        </nav>
+    </header>
+    <div class="d-flex mt-4">
+        <nav class="fixed-sidebar bg-light p-4">
+            <ul class="nav flex-column">
+                <h7 class="invisible">Tous ici</h7>
+                <h3 class="bg-success text-warning">Tous nos catégories des livres ici</h3>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadHomeContent()">Informatique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('home.html')">Sciences</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('AAAA.html')">Construction</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('homme.html')">Mecanique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('header1.html')">Droit et entreprise</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('Gauches.html')">Litterature</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('AAAA.html')">Art et Loisir</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('homme.html')">Vie pratique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('header1.html')">Voyage et tourisme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="loadPage('Gauches.html')">Graphisme et Photo</a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="main-content p-6">
+            <div id="content">
+                <section id="introduction">
+                    <h6 classe="invisible">..</h6>
+                    <h2 class="text-center">Introduction aux Ventes de Livres</h2>
+                    <p>
+                        Les ventes de livres représentent un secteur dynamique et en constante évolution. Avec l'avènement des livres numériques et des plateformes de vente en ligne, le marché du livre a connu une transformation significative.
+                        Que ce soit pour des livres de fiction, des ouvrages de non-fiction, des manuels scolaires ou des livres spécialisés, la demande reste forte.
+                    </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        function loadPage(url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Réseau non disponible');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('content').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Erreur lors du chargement de la page :', error);
+                    loadHomeContent(); // Revenir à la page d'accueil en cas d'erreur
+                });
+        }
+
+        function loadHomeContent() {
+            document.getElementById('content').innerHTML = `
+                <h2>Bienvenue</h2>
+                <p>Voici le contenu par défaut. Sélectionnez un lien pour voir d'autres informations.</p>
+            `;
+        }
+
+        // Charger le contenu par défaut au départ
+        window.onload = function() {
+            loadHomeContent(); // Charge le contenu par défaut à l'ouverture
+            
+        };
+        
+
+        
+    </script>
+</body>
+</html>

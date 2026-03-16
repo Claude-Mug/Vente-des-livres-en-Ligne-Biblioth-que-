@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'Accueil</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: d-flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #content {
+            flex-grow: 1; /* Permet à la section de contenu de remplir l'espace restant */
+            border: 1px solid #ccc;
+            padding: 20px;
+            overflow-y: auto; /* Ajoute un défilement si le contenu dépasse la hauteur */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-light p-3">
+        <div class="container d-flex justify-content-between">
+            <h1>Mon Site</h1>
+            <a href="#" class="btn btn-primary" id="homeButton">Accueil</a>
+        </div>
+    </header>
+
+    <div class="container-fluid d-flex">
+        <aside class="col-md-3 bg-light p-3">
+            <h4>Navigation</h4>
+            <button class="btn btn-secondary mb-2" id="Homme.html">Chargement 1</button>
+            <button class="btn btn-secondary mb-2" id="Gauches.html">Chargement 2</button>
+            <button class="btn btn-secondary">Chargement 3</button>
+        </aside>
+        
+        <main class="col-md-9" id="content">
+            <h2>Bienvenue sur la page d'accueil</h2>
+            <p>Veuillez sélectionner une option à gauche pour charger le contenu.</p>
+        </main>
+    </div>
+
+    <script>
+        function loadPage(content) {
+            const contentMap = {
+                'Homme.html': '<h2>Contenu 1</h2><p>Ceci est le contenu chargé pour le lien 1.</p>',
+                'Gauches.html': '<h2>Contenu 2</h2><p>Ceci est le contenu chargé pour le lien 2.</p>',
+                'link3': '<h2>Contenu 3</h2><p>Ceci est le contenu chargé pour le lien 3.</p>',
+            };
+            document.getElementById('content').innerHTML = contentMap[content] || '<h2>Erreur</h2><p>Contenu non trouvé.</p>';
+        }
+
+        document.getElementById('homeButton').addEventListener('click', function(event) {
+            event.preventDefault(); // Empêche le comportement par défaut
+            document.getElementById('content').innerHTML = '<h2>Bienvenue sur la page d\'accueil</h2><p>Veuillez sélectionner une option à gauche pour charger le contenu.</p>';
+        });
+
+        document.getElementById('link1').addEventListener('click', function() {
+            loadPage('link1');
+        });
+
+        document.getElementById('link2').addEventListener('click', function() {
+            loadPage('link2');
+        });
+
+        document.getElementById('link3').addEventListener('click', function() {
+            loadPage('link3');
+        });
+    </script>
+
+</body>
+</html>

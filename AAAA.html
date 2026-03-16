@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliothèque</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin-top: 70px; /* To prevent content from being hidden behind the fixed navbar */
+        }
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body class="bg-transparent">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand bg-info" href="#">Mon Bibliothèque</a>
+        <form class="d-flex justify-content-end" role="search" id="searchForm" style="width: 70%;">
+            <input class="form-control me-1 form-control-lg border-primary rounded" type="search" placeholder="Rechercher" aria-label="Search" id="searchInput">
+            <button class="btn btn-outline-success" type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="btn btn-outline-info ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                <i class="fas fa-user"></i> Connexion
+            </button>
+            <a href="/Header.html" class="btn btn-outline-success ms-2" title="Mon Panier">
+                <i class="fas fa-shopping-cart"></i> Mon Panier
+            </a>
+        </form>
+    </div>
+</nav>
+
+<!-- Modales de connexion et de création de compte (identiques à votre code précédent) -->
+
+<script>
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        const query = document.getElementById('searchInput').value;
+        alert('Recherche pour : ' + query); 
+    });
+</script>
+
+<div class="container">
+    <h1 class="text-center text-white bg-info">Accueil</h1>
+    <div class="text-center container mt-4">
+        <h2 class="text-bg-secondary col-md-12 mx-auto mt-4">Description</h2>
+        <p>Bienvenue sur notre site, votre destination privilégiée pour l'achat de livres de tous genres...</p>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4 text-bg-secondary">Catégories de Livres</h1>
+        <div class="row">
+            <!-- Exemples de cartes de catégorie -->
+            <div class="col-md-4 mb-4">
+                <div class="card category-card">
+                    <div class="card-body">
+                        <h5 class="category-title">Graphisme & Photo</h5>
+                        <p>Les livres sur le graphisme et la photographie offrent une richesse de connaissances...</p>
+                        <a class="dropdown-item text-danger" href="/Infos.html">Graphisme & Photo</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Répétez pour d'autres catégories -->
+        </div>
+    </div>
+</div>
+
+<ul>
+    <li><a class="dropdown-item" href="/Infos.html">Graphisme & Photo</a></li>
+    <li><a class="dropdown-item" href="/Infos.html">Informatique</a></li>
+    <li><a class="dropdown-item" href="https://example.com/construction">Construction</a></li>
+    <li><a class="dropdown-item" href="https://example.com/business-law">Entreprise & Droit</a></li>
+    <li><a class="dropdown-item" href="https://example.com/sciences">Sciences</a></li>
+    <li><a class="dropdown-item" href="https://example.com/literature">Littérature</a></li>
+    <li><a class="dropdown-item" href="https://example.com/arts-leisure">Arts & Loisirs</a></li>
+    <li><a class="dropdown-item" href="https://example.com/practical-life">Vie pratique</a></li>
+    <li><a class="dropdown-item" href="https://example.com/travel-tourism">Voyage et Tourisme</a></li>
+    <li><a class="dropdown-item" href="/LivreInfo.html">BD et Jeunesse</a></li>
+</ul>
+
+<ul>
+    <li><a class="dropdown-item" href="/Infos.html">Développement web</a></li>
+    <li><a class="dropdown-item" href="https://example.com/app-development">Développement d'applications</a></li>
+    <li><a class="dropdown-item" href="https://example.com/development-tools">Outils de développement</a></li>
+    <li><a class="dropdown-item" href="/Infos.html">Informatique d'entreprise</a></li>
+    <li><a class="dropdown-item" href="https://example.com/management-systems">Management des systèmes d'information</a></li>
+    <li><a class="dropdown-item" href="https://example.com/web-design">Conception et développement web</a></li>
+    <li><a class="dropdown-item" href="https://example.com/seo">Référencement de sites</a></li>
+    <li><a class="dropdown-item" href="https://example.com/operating-systems">Systèmes d'exploitation (Windows, UNIX, Linux)</a></li>
+    <li><a class="dropdown-item" href="https://example.com/hardware">Hardware et matériels</a></li>
+    <li><a class="dropdown-item" href="https://example.com/computer-architecture">Architecture des ordinateurs</a></li>
+    <li><a class="dropdown-item" href="https://example.com/electronics-for-it">Electronique pour l'informatique</a></li>
+    <li><a class="dropdown-item" href="https://example.com/peripherals">Périphériques</a></li>
+    <li><a class="dropdown-item" href="https://example.com/electronics">Electronique</a></li>
+    <li><a class="dropdown-item" href="https://example.com/databases">Bases de données</a></li>
+    <li><a class="dropdown-item" href="https://example.com/object-databases">Bases de données objet et objet relationnelles</a></li>
+    <li><a class="dropdown-item" href="https://example.com/networks">Réseaux et télécommunications</a></li>
+    <li><a class="dropdown-item" href="https://example.com/general-works">Ouvrages généraux</a></li>
+</ul>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<?php
+// PHP connection to the database
+$servername = "localhost"; // Hostname
+$username = "root"; // Database username
+$password = ""; // Database password
+$dbname = "livres"; // Database name
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully"; // Optional: remove in production
+
+// Close connection
+$conn->close();
+?>
+</body>
+</html>
